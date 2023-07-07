@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, View, Image, ScrollView, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Image,
+  ScrollView,
+  Dimensions,
+  ImageSourcePropType,
+} from 'react-native';
 
 const HomePostImageSlider = ({images}) => {
   return (
@@ -9,7 +16,7 @@ const HomePostImageSlider = ({images}) => {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         style={styles.container}>
-        {images.map((image, index) => (
+        {images.map((image: ImageSourcePropType, index: number) => (
           <View key={index} style={styles.slide}>
             <Image source={image} style={styles.image} />
           </View>
